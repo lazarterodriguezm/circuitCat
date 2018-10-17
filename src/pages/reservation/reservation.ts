@@ -1,13 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the ReservationPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-reservation',
@@ -20,6 +13,22 @@ export class ReservationPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ReservationPage');
+  }
+
+  items = [
+    'Item 1',
+    'Item 2',
+    'Item 3',
+    'Item 4',
+    'Item 5',
+    'Item 6',
+    'Item 7',
+    'Item 8',
+    'Item 9',
+  ];
+
+  itemSelected(item: string) {
+    console.log("Selected Item", item);
   }
 
 }
