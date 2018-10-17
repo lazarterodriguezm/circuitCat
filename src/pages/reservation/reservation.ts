@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import { CreateReservationPage } from '../create-reservation/create-reservation';
+
 @IonicPage()
 @Component({
   selector: 'page-reservation',
@@ -29,6 +31,10 @@ export class ReservationPage {
 
   itemSelected(item: string) {
     console.log("Selected Item", item);
+  }
+
+  pushCreateReservationPage() {
+    this.navCtrl.push(CreateReservationPage);
   }
 
 }
