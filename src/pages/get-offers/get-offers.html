@@ -1,0 +1,23 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>GetOffers</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+    <form (ngSubmit)="getOffer()">
+      <ion-item>
+        <ion-label>Title</ion-label>
+        <ion-input type="text" [(ngModel)]="offer.title" name="title"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Description</ion-label>
+        <ion-textarea [(ngModel)]="offer.description" name="description"></ion-textarea>
+      </ion-item>
+      <button ion-button type="submit" block>Enviar oferta</button>
+    </form>
+
+</ion-content>
