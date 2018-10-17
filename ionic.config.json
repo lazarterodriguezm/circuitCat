@@ -1,0 +1,8 @@
+{
+  "name": "CircuitCat",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "pro_id": "d157391f"
+}
