@@ -22,17 +22,21 @@ export class ReservationPage {
     {
       "nombre" : "Nombre 1",
       "fecha" : "Fecha 1",
-      "comensales" : "Comensales 1"
+      "comensales" : "Comensales 1",
+      "preferencias": "Preferencias 1"
     },
     {
       "nombre" : "Nombre 2",
       "fecha" : "Fecha 2",
-      "comensales" : "Comensales 2"
+      "comensales" : "Comensales 2",
+      "preferencias": "Preferencias 2"
+
     },
     {
       "nombre" : "Nombre 3",
       "fecha" : "Fecha 3",
-      "comensales" : "Comensales 3"
+      "comensales" : "Comensales 3",
+      "preferencias": "Preferencias 3"
     }];
 
 
