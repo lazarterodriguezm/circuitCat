@@ -17,17 +17,25 @@ export class ReservationPage {
     console.log('ionViewDidLoad ReservationPage');
   }
 
+
   items = [
-    'Item 1',
-    'Item 2',
-    'Item 3',
-    'Item 4',
-    'Item 5',
-    'Item 6',
-    'Item 7',
-    'Item 8',
-    'Item 9',
-  ];
+    {
+      "nombre" : "Nombre 1",
+      "fecha" : "Fecha 1",
+      "comensales" : "Comensales 1"
+    },
+    {
+      "nombre" : "Nombre 2",
+      "fecha" : "Fecha 2",
+      "comensales" : "Comensales 2"
+    },
+    {
+      "nombre" : "Nombre 3",
+      "fecha" : "Fecha 3",
+      "comensales" : "Comensales 3"
+    }];
+
+
 
   itemSelected(item: string) {
     console.log("Selected Item", item);
