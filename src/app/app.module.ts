@@ -13,6 +13,9 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { CreateReservationPage } from '../pages/create-reservation/create-reservation';
 import { ViewOffersPage } from '../pages/view-offers/view-offers';
 import { GetOffersPage } from '../pages/get-offers/get-offers';
+import { ViewReservationPage } from '../pages/view-reservation/view-reservation';
+import { ViewOfferPage } from '../pages/view-offer/view-offer';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -28,7 +31,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TabsPage,
     CreateReservationPage,
     ViewOffersPage,
-    GetOffersPage
+    GetOffersPage,
+    ViewReservationPage,
+    ViewOfferPage
   ],
   imports: [
     BrowserModule,
@@ -45,7 +50,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TabsPage,
     CreateReservationPage,
     ViewOffersPage,
-    GetOffersPage
+    GetOffersPage,
+    ViewOfferPage,
+    ViewReservationPage
   ],
   providers: [
     StatusBar,

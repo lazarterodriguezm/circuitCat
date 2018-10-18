@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import { ViewOfferPage } from '../view-offer/view-offer';
+
 @IonicPage()
 @Component({
   selector: 'page-view-offers',
@@ -17,20 +19,24 @@ export class ViewOffersPage {
 
   items = [
     {
-      "nombre" : "Nombre 1",
-      "fecha" : "Fecha 1"
+      "code" : "Codigo 1",
+      "name" : "Nombre 1",
+      "date" : "Fecha 1"
     },
     {
-      "nombre" : "Nombre 2",
-      "fecha" : "Fecha 2"
+      "code" : "Codigo 2",
+      "name" : "Nombre 2",
+      "date" : "Fecha 2",
     },
     {
-      "nombre" : "Nombre 3",
-      "fecha" : "Fecha 3"
-    }];
+      "code" : "Codigo 3",
+      "name" : "Nombre 3",
+      "date" : "Fecha 3",
+    }
+  ];
 
-  itemSelected(item: string) {
-    console.log("Selected Item", item);
+  pushViewOfferPage(item: any) {
+    this.navCtrl.push(ViewOfferPage, {item : item});
   }
 
 }
