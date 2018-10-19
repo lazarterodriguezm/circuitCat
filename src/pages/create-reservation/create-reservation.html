@@ -10,12 +10,28 @@
 
     <form (ngSubmit)="createReservation()">
       <ion-item>
-        <ion-label>Title</ion-label>
-        <ion-input type="text" [(ngModel)]="reservation.title" name="title"></ion-input>
+        <ion-label>Nombre</ion-label>
+        <ion-input type="text" [(ngModel)]="reservation.name" name="name"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label>Description</ion-label>
-        <ion-textarea [(ngModel)]="reservation.description" name="description"></ion-textarea>
+        <ion-label>Apellido</ion-label>
+        <ion-input type="text" [(ngModel)]="reservation.surname" name="surname"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Teléfono</ion-label>
+        <ion-input type="tel" [(ngModel)]="reservation.phone" name="phone"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Email</ion-label>
+        <ion-input type="email" [(ngModel)]="reservation.email" name="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Numero de comensales</ion-label>
+        <ion-input type="number" [(ngModel)]="reservation.diners" name="diners"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Descripcion</ion-label>
+        <ion-textarea [(ngModel)]="reservation.preferences" name="preferences"></ion-textarea>
       </ion-item>
       <button ion-button type="submit" block>Crear reserva</button>
     </form>
