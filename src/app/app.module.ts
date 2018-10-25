@@ -59,8 +59,7 @@ import { Push, PushObject, PushOptions } from '@ionic-native/push';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    Push,
-    PushObject
+    Push
   ]
 })
 export class AppModule {}
