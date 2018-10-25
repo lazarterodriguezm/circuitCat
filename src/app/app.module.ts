@@ -20,6 +20,8 @@ import { ViewOfferPage } from '../pages/view-offer/view-offer';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { Push } from '@ionic-native/push';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -57,6 +59,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
+    Push,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
