@@ -16,11 +16,10 @@ import { GetOffersPage } from '../pages/get-offers/get-offers';
 import { ViewReservationPage } from '../pages/view-reservation/view-reservation';
 import { ViewOfferPage } from '../pages/view-offer/view-offer';
 
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { Push } from '@ionic-native/push';
+import { Push, PushObject, PushOptions } from '@ionic-native/push';
 
 @NgModule({
   declarations: [
@@ -59,8 +58,9 @@ import { Push } from '@ionic-native/push';
   providers: [
     StatusBar,
     SplashScreen,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
     Push,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    PushObject
   ]
 })
 export class AppModule {}
