@@ -1,8 +1,10 @@
+// Default imports
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
+// Main pages
 import { HomePage } from '../pages/home/home';
 import { MenuPage } from '../pages/menu/menu';
 import { ReservationPage } from '../pages/reservation/reservation';
@@ -10,16 +12,39 @@ import { OffersPage } from '../pages/offers/offers';
 import { MapPage } from '../pages/map/map';
 import { TabsPage } from '../pages/tabs/tabs';
 
+// Secondary pages
 import { CreateReservationPage } from '../pages/create-reservation/create-reservation';
 import { ViewOffersPage } from '../pages/view-offers/view-offers';
 import { GetOffersPage } from '../pages/get-offers/get-offers';
 import { ViewReservationPage } from '../pages/view-reservation/view-reservation';
 import { ViewOfferPage } from '../pages/view-offer/view-offer';
 
+// Providers
+import { StorageProvider } from '../providers/storage/storage';
+
+// Default plugins
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { Push, PushObject, PushOptions } from '@ionic-native/push';
+// Plugins
+import { Push } from '@ionic-native/push';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+//import { AngularFireFunctionsModule } from 'angularfire2/functions';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireStorageModule } from 'angularfire2/storage';
+//import { AngularFireMessagingModule } from 'angularfire2/messaging';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
+
+var firebase = {
+    apiKey: "AIzaSyAyiJZMWW7wC7FrmkkPtlU5b1PGwYOC4Lg",
+    authDomain: "circuitcat-com.firebaseapp.com",
+    databaseURL: "https://circuitcat-com.firebaseio.com",
+    projectId: "circuitcat-com",
+    storageBucket: "circuitcat-com.appspot.com",
+    messagingSenderId: "1028410392491"
+};
 
 @NgModule({
   declarations: [
@@ -38,7 +63,14 @@ import { Push, PushObject, PushOptions } from '@ionic-native/push';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebase), // imports firebase/app needed for everything
+    AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
+    AngularFireDatabaseModule, // imports firebase/database only needed for database features
+    //AngularFireFunctionsModule, // imports firebase/functions only needed for functions features
+    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
+    AngularFireStorageModule, // imports firebase/storage only needed for storage features
+    //AngularFireMessagingModule // imports firebase/messaging only needed for messaging features
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -56,10 +88,12 @@ import { Push, PushObject, PushOptions } from '@ionic-native/push';
     ViewReservationPage
   ],
   providers: [
+    StorageProvider,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    Push
+    Push,
+    InAppBrowser
   ]
 })
 export class AppModule {}
