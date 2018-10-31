@@ -17,8 +17,8 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 export class HomePage {
   files: Observable<any[]>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private storageProvider: StorageProvider, private alertCtrl: AlertController, private toastCtrl: ToastController, private iab: InAppBrowser) {
-    this.files = this.storageProvider.getFiles();
+  constructor(public navCtrl: NavController, public navParams: NavParams, private storageProvider: StorageProvider, private alertCtrl: AlertController, private toastCtrl: ToastController, private inAppBrowser: InAppBrowser) {
+    this.files = this.storageProvider.getList('files');
   }
 
   ionViewDidLoad() {
@@ -51,11 +51,12 @@ export class HomePage {
   }
  
   uploadInformation(text) {
-    let upload = this.storageProvider.uploadToStorage(text);
+  /*
+    let upload = this.storageProvider.uploadToStorage('files', text);
  
     // Perhaps this syntax might change, it's no error here!
     upload.then().then(res => {
-      this.storageProvider.storeInfoToDatabase(res.metadata).then(() => {
+      this.storageProvider.storeInfoToDatabase('files', res.metadata).then(() => {
         let toast = this.toastCtrl.create({
           message: 'New File added!',
           duration: 3000
@@ -63,10 +64,11 @@ export class HomePage {
         toast.present();
       });
     });
+    */
   }
  
   deleteFile(file) {
-    this.storageProvider.deleteFile(file).subscribe(() => {
+    this.storageProvider.deleteFile('files', file).subscribe(() => {
       let toast = this.toastCtrl.create({
         message: 'File removed!',
         duration: 3000
@@ -76,6 +78,6 @@ export class HomePage {
   }
  
   viewFile(url) {
-    this.iab.create(url);
+    this.inAppBrowser.create(url);
   }
 }

@@ -6,41 +6,35 @@ import { AngularFireStorage, AngularFireUploadTask } from 'angularfire2/storage'
 @Injectable()
 export class StorageProvider {
 
-  constructor(private db: AngularFireDatabase, private afStorage: AngularFireStorage) {
+  constructor(private angularFireDatabase: AngularFireDatabase, private angularFireStorage: AngularFireStorage) {
     console.log('Hello StorageProvider Provider');
   }
 
-  getFiles() {
-    let ref = this.db.list('files');
+  getList(path) {
+    let ref = this.angularFireDatabase.list(path);
  
     return ref.snapshotChanges().map(changes => {
       return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
     });
   }
  
-  uploadToStorage(information): AngularFireUploadTask {
+  uploadToStorage(path, information): AngularFireUploadTask {
     let newName = `${new Date().getTime()}.txt`;
  
-    return this.afStorage.ref(`files/${newName}`).putString(information);
+    return this.angularFireStorage.ref(`${path}/${newName}`).putString(information);
   }
  
-  storeInfoToDatabase(metainfo) {
-    let toSave = {
-      created: metainfo.timeCreated,
-      url: metainfo.downloadURLs[0],
-      fullPath: metainfo.fullPath,
-      contentType: metainfo.contentType
-    }
-    return this.db.list('files').push(toSave);
+  storeInfoToDatabase(path, metainfo) {
+    return this.angularFireDatabase.list(path).push(metainfo);
   }
  
-  deleteFile(file) {
+  deleteFile(path, file) {
     let key = file.key;
     let storagePath = file.fullPath;
  
-    let ref = this.db.list('files');
+    let ref = this.angularFireDatabase.list(path);
  
     ref.remove(key);
-    return this.afStorage.ref(storagePath).delete();
+    return this.angularFireStorage.ref(storagePath).delete();
   }
 }
