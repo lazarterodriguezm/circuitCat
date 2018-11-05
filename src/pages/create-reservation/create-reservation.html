@@ -10,17 +10,17 @@
 
       <ion-item>
         <ion-label>Nombre</ion-label>
-        <ion-input type="text" [(ngModel)]="reservation.name" name="name"></ion-input>
+        <ion-input type="text" [(ngModel)]="reservation.nombre" name="name"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label>Apellido</ion-label>
-        <ion-input type="text" [(ngModel)]="reservation.surname" name="surname"></ion-input>
+        <ion-input type="text" [(ngModel)]="reservation.apellido" name="surname"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label>Teléfono</ion-label>
-        <ion-input type="tel" [(ngModel)]="reservation.phone" name="phone"></ion-input>
+        <ion-input type="tel" [(ngModel)]="reservation.telefono" name="phone"></ion-input>
       </ion-item>
 
       <ion-item>
@@ -30,12 +30,12 @@
 
       <ion-item>
         <ion-label>Numero de comensales</ion-label>
-        <ion-input type="number" [(ngModel)]="reservation.diners" name="diners"></ion-input>
+        <ion-input type="number" [(ngModel)]="reservation.comensales" name="diners"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label>Descripcion</ion-label>
-        <ion-textarea [(ngModel)]="reservation.preferences" name="preferences"></ion-textarea>
+        <ion-textarea [(ngModel)]="reservation.preferencias" name="preferences"></ion-textarea>
       </ion-item>
 
       <button ion-button type="submit" block>Crear reserva</button>
