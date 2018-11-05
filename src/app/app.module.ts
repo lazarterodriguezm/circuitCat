@@ -36,6 +36,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 //import { AngularFireMessagingModule } from 'angularfire2/messaging';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { Device } from '@ionic-native/device';
 
 var firebase = {
     apiKey: "AIzaSyAyiJZMWW7wC7FrmkkPtlU5b1PGwYOC4Lg",
@@ -93,7 +94,8 @@ var firebase = {
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Push,
-    InAppBrowser
+    InAppBrowser,
+    Device
   ]
 })
 export class AppModule {}

@@ -4,6 +4,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CreateReservationPage } from '../create-reservation/create-reservation';
 import { ViewReservationPage } from '../view-reservation/view-reservation';
 
+import { StorageProvider } from './../../providers/storage/storage';
+
+import { Observable } from 'rxjs/Observable';
+
+import { Device } from '@ionic-native/device';
+
 @IonicPage()
 @Component({
   selector: 'page-reservation',
@@ -11,40 +17,25 @@ import { ViewReservationPage } from '../view-reservation/view-reservation';
 })
 export class ReservationPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  reservations: Observable<any[]>;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private storageProvider: StorageProvider, private device: Device) {
+    this.reservations = this.storageProvider.getList('reservas/' + this.device.uuid);
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ReservationPage');
   }
 
-  items = [
-    {
-      "name" : "Nombre 1",
-      "date" : "Fecha 1",
-      "diners" : "Comensales 1",
-      "preferences" : "Preferencias 1"
-    },
-    {
-      "name" : "Nombre 2",
-      "date" : "Fecha 2",
-      "diners" : "Comensales 2",
-      "preferences" : "Preferencias 2"
-    },
-    {
-      "name" : "Nombre 3",
-      "date" : "Fecha 3",
-      "diners" : "Comensales 3",
-      "preferences" : "Preferencias 3"
-    }
-  ];
-
-  pushViewReservationPage(item: any) {
-    this.navCtrl.push(ViewReservationPage, {item : item});
-  }
-
   pushCreateReservationPage() {
     this.navCtrl.push(CreateReservationPage);
   }
 
+  pushViewReservationPage(reservation: any) {
+    this.navCtrl.push(ViewReservationPage, {reservation : reservation});
+  }
+
+  deleteReservation(reservation: any) {
+    this.storageProvider.deleteInfoFromDatabase('reservas/' + this.device.uuid, reservation);
+  }
 }

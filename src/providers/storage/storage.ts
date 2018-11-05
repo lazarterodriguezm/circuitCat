@@ -10,6 +10,10 @@ export class StorageProvider {
     console.log('Hello StorageProvider Provider');
   }
 
+  storeInfoToDatabase(path, metainfo) {
+    return this.angularFireDatabase.list(path).push(metainfo);
+  }
+
   getList(path) {
     let ref = this.angularFireDatabase.list(path);
  
@@ -24,17 +28,7 @@ export class StorageProvider {
     return this.angularFireStorage.ref(`${path}/${newName}`).putString(information);
   }
  
-  storeInfoToDatabase(path, metainfo) {
-    return this.angularFireDatabase.list(path).push(metainfo);
-  }
- 
-  deleteFile(path, file) {
-    let key = file.key;
-    let storagePath = file.fullPath;
- 
-    let ref = this.angularFireDatabase.list(path);
- 
-    ref.remove(key);
-    return this.angularFireStorage.ref(storagePath).delete();
+  deleteInfoFromDatabase(path, metainfo) {
+    this.angularFireDatabase.list(path).remove(metainfo.key)
   }
 }
