@@ -8,48 +8,24 @@
 
   <ion-slides pager style="height: 33%;">
 
-    <ion-slide style="background-color: green">
-      <h2>Slide 1</h2>
+    <ion-slide style="background-color: green" *ngFor="let course of entrees | async">
+      <h2>{{ course.nombre }}</h2>
     </ion-slide>
 
-    <ion-slide style="background-color: blue">
-      <h2>Slide 2</h2>
-    </ion-slide>
+  </ion-slides>
 
-    <ion-slide style="background-color: red">
-      <h2>Slide 3</h2>
+  <ion-slides pager style="height: 34%;">
+
+    <ion-slide style="background-color: green" *ngFor="let course of mainCourses | async">
+      <h2>{{ course.nombre }}</h2>
     </ion-slide>
 
   </ion-slides>
 
   <ion-slides pager style="height: 33%;">
 
-    <ion-slide style="background-color: green">
-      <h2>Slide 1</h2>
-    </ion-slide>
-
-    <ion-slide style="background-color: blue">
-      <h2>Slide 2</h2>
-    </ion-slide>
-
-    <ion-slide style="background-color: red">
-      <h2>Slide 3</h2>
-    </ion-slide>
-
-  </ion-slides>
-
-  <ion-slides pager style="height: 33%;">
-
-    <ion-slide style="background-color: green">
-      <h2>Slide 1</h2>
-    </ion-slide>
-
-    <ion-slide style="background-color: blue">
-      <h2>Slide 2</h2>
-    </ion-slide>
-
-    <ion-slide style="background-color: red">
-      <h2>Slide 3</h2>
+    <ion-slide style="background-color: green" *ngFor="let course of desserts | async">
+      <h2>{{ course.nombre }}</h2>
     </ion-slide>
 
   </ion-slides>
