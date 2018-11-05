@@ -8,14 +8,13 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ViewOfferPage {
 
-  item = {};
+  offer = {};
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.item = navParams.get('item');
+    this.offer = navParams.get('offer');
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ViewOfferPage');
   }
-
 }
