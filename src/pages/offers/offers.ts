@@ -25,5 +25,4 @@ export class OffersPage {
   pushGetOffersPage() {
     this.navCtrl.push(GetOffersPage);
   }
-
 }

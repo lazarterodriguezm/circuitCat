@@ -8,7 +8,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ViewReservationPage {
 
-  reservation = {};
+  reservation = {}
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.reservation = navParams.get('reservation');

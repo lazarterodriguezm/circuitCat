@@ -20,7 +20,7 @@ export class ReservationPage {
   reservations: Observable<any[]>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private storageProvider: StorageProvider, private device: Device) {
-    this.reservations = this.storageProvider.getList('reservas/' + this.device.uuid);
+    this.reservations = this.storageProvider.getListFromDatabase('reservas/' + this.device.uuid);
   }
 
   ionViewDidLoad() {

@@ -1,14 +1,13 @@
 <ion-header>
-
   <ion-navbar>
     <ion-title>CreateReservation</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 <ion-content padding>
 
     <form (ngSubmit)="createReservation()">
+
       <ion-item>
         <ion-label>Nombre</ion-label>
         <ion-input type="text" [(ngModel)]="reservation.name" name="name"></ion-input>
@@ -40,6 +39,7 @@
       </ion-item>
 
       <button ion-button type="submit" block>Crear reserva</button>
+
     </form>
 
 </ion-content>

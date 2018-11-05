@@ -19,7 +19,7 @@ export class ViewOffersPage {
   offers: Observable<any[]>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private storageProvider: StorageProvider, private device: Device) {
-    this.offers = this.storageProvider.getList('ofertas/' + this.device.uuid);
+    this.offers = this.storageProvider.getListFromDatabase('ofertas/' + this.device.uuid);
   }
 
   ionViewDidLoad() {

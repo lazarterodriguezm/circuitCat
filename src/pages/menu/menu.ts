@@ -14,5 +14,4 @@ export class MenuPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad MenuPage');
   }
-
 }

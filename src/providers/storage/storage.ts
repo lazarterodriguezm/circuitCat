@@ -14,21 +14,21 @@ export class StorageProvider {
     return this.angularFireDatabase.list(path).push(metainfo);
   }
 
-  getList(path) {
+  getListFromDatabase(path) {
     let ref = this.angularFireDatabase.list(path);
  
     return ref.snapshotChanges().map(changes => {
       return changes.map(c => ({ key: c.payload.key, ...c.payload.val() }));
     });
   }
+
+  deleteInfoFromDatabase(path, metainfo) {
+    this.angularFireDatabase.list(path).remove(metainfo.key)
+  }
  
   uploadToStorage(path, information): AngularFireUploadTask {
     let newName = `${new Date().getTime()}.txt`;
  
     return this.angularFireStorage.ref(`${path}/${newName}`).putString(information);
-  }
- 
-  deleteInfoFromDatabase(path, metainfo) {
-    this.angularFireDatabase.list(path).remove(metainfo.key)
   }
 }

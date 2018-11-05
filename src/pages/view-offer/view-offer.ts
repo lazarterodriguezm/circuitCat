@@ -8,7 +8,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ViewOfferPage {
 
-  offer = {};
+  offer = {}
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.offer = navParams.get('offer');

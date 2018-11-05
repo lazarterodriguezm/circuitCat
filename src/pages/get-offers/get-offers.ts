@@ -22,5 +22,4 @@ export class GetOffersPage {
 
     this.navCtrl.pop();
   }
-
 }

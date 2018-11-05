@@ -14,5 +14,4 @@ export class MapPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad MapPage');
   }
-
 }

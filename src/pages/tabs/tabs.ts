@@ -20,7 +20,5 @@ export class TabsPage {
   offersRoot = OffersPage
   mapRoot = MapPage
 
-
   constructor(public navCtrl: NavController) {}
-
 }
