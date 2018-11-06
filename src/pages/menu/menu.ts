@@ -4,6 +4,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { StorageProvider } from './../../providers/storage/storage';
 
 import { Observable } from 'rxjs/Observable';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @IonicPage()
 @Component({
@@ -16,7 +17,7 @@ export class MenuPage {
   mainCourses: Observable<any[]>;
   desserts: Observable<any[]>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private storageProvider: StorageProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private storageProvider: StorageProvider, private domSanitizer: DomSanitizer) {
     this.entrees = this.storageProvider.getListFromDatabase('menus/entrantes');
     this.mainCourses = this.storageProvider.getListFromDatabase('menus/platos principales');
     this.desserts = this.storageProvider.getListFromDatabase('menus/postres');
@@ -24,5 +25,9 @@ export class MenuPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MenuPage');
+  }
+
+  getSlideStyle(image) {
+    return this.domSanitizer.bypassSecurityTrustStyle(`url(${image})`);
   }
 }

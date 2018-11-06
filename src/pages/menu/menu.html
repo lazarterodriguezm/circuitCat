@@ -8,7 +8,7 @@
 
   <ion-slides pager style="height: 33%;">
 
-    <ion-slide style="background-color: green" *ngFor="let course of entrees | async">
+    <ion-slide *ngFor="let course of entrees | async" style="height: 100%; background-position: center; background-repeat: no-repeat; background-size: cover;" [style.background-image]="getSlideStyle(course.imagen)">
       <h2>{{ course.nombre }}</h2>
     </ion-slide>
 
@@ -16,7 +16,7 @@
 
   <ion-slides pager style="height: 34%;">
 
-    <ion-slide style="background-color: green" *ngFor="let course of mainCourses | async">
+    <ion-slide *ngFor="let course of mainCourses | async" style="height: 100%; background-position: center; background-repeat: no-repeat; background-size: cover;" [style.background-image]="getSlideStyle(course.imagen)">
       <h2>{{ course.nombre }}</h2>
     </ion-slide>
 
@@ -24,7 +24,7 @@
 
   <ion-slides pager style="height: 33%;">
 
-    <ion-slide style="background-color: green" *ngFor="let course of desserts | async">
+    <ion-slide *ngFor="let course of desserts | async" style="height: 100%; background-position: center; background-repeat: no-repeat; background-size: cover;" [style.background-image]="getSlideStyle(course.imagen)">
       <h2>{{ course.nombre }}</h2>
     </ion-slide>
 
