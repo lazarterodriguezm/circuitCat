@@ -1,17 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> master
-=======
 import { StorageProvider } from './../../providers/storage/storage';
 
 import { Observable } from 'rxjs/Observable';
 
->>>>>>> Marc
 @IonicPage()
 @Component({
   selector: 'page-choose-menu',
@@ -40,8 +33,4 @@ export class ChooseMenuPage {
 
     this.navCtrl.pop();
   }
-<<<<<<< HEAD
-
-=======
->>>>>>> master
 }

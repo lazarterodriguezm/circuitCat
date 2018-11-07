@@ -9,9 +9,6 @@ import { ToastController } from 'ionic-angular/components/toast/toast-controller
 
 import { Device } from '@ionic-native/device';
 
-import { SelectDishesPage } from '../select-dishes/select-dishes';
-
-
 @IonicPage()
 @Component({
   selector: 'page-create-reservation',
@@ -19,7 +16,6 @@ import { SelectDishesPage } from '../select-dishes/select-dishes';
 })
 export class CreateReservationPage {
 
-  selectDishesPage=SelectDishesPage;
   reservation = {}
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private storageProvider: StorageProvider, private toastCtrl: ToastController, private device: Device) {

@@ -23,14 +23,6 @@ export class GetOffersPage {
     console.log('ionViewDidLoad GetOffersPage');
   }
 
-<<<<<<< HEAD
-  getOffer() {
-    this.storageProvider.storeInfoToDatabase('ofertas/' + this.device.uuid, this.offer).then(() => {
-      let toast = this.toastCtrl.create({
-        message: 'New Offer Send!',
-        duration: 3000
-      });
-=======
   createOfferForm() {
     this.storageProvider.storeInfoToDatabase('ofertas/formularios/' + this.device.uuid, this.offer).then(() => {
       let toast = this.toastCtrl.create({
@@ -38,11 +30,9 @@ export class GetOffersPage {
         duration: 3000
       });
 
->>>>>>> master
       toast.present();
     });
 
     this.navCtrl.pop();
   }
-
 }
