@@ -6,18 +6,42 @@
 
 <ion-content padding>
 
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Moto_Gp_logo.svg/250px-Moto_Gp_logo.svg.png" style="width: 100%;">
+    <hr width="100px">
     <form (ngSubmit)="getOffer()">
 
       <ion-item>
-        <ion-label>Title</ion-label>
-        <ion-input type="text" [(ngModel)]="offer.title" name="title"></ion-input>
+        <ion-icon name="ribbon" color="#FFD700"></ion-icon>
+        <ion-label>Primero</ion-label>
+        <ion-select>
+          <ion-option value="m">Marquez</ion-option>
+          <ion-option value="l">Lorenzo</ion-option>
+        </ion-select>
       </ion-item>
 
       <ion-item>
-        <ion-label>Description</ion-label>
-        <ion-textarea [(ngModel)]="offer.description" name="description"></ion-textarea>
+        <ion-icon name="ribbon" color="#bebebe"></ion-icon>
+        <ion-label>Segundo</ion-label>
+        <ion-select>
+          <ion-option value="m">Marquez</ion-option>
+          <ion-option value="l">Lorenzo</ion-option>
+        </ion-select>
       </ion-item>
 
+      <ion-item>
+        <ion-icon name="ribbon" color="#CD7F32"></ion-icon>
+        <ion-label>Tercero</ion-label>
+        <ion-select>
+          <ion-option value="m">Marquez</ion-option>
+          <ion-option value="l">Lorenzo</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <!--<ion-item>
+        <ion-label>Description</ion-label>
+        <ion-textarea [(ngModel)]="offer.description" name="description"></ion-textarea>
+      </ion-item>-->
+      <hr width="100px">
       <button ion-button type="submit" block>Enviar oferta</button>
 
     </form>
