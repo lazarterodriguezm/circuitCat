@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>SelectDishes</ion-title>
+    <ion-title>ChooseMenu</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -13,23 +13,23 @@
     <ion-label>Entrantes</ion-label>
     <ion-item *ngFor="let course of entrees | async">
       <ion-label>{{ course.nombre }}</ion-label>
-      <ion-input type="number" [(ngModel)]="dishes.course" name="{{ course.nombre }}"></ion-input>
+      <ion-input type="number" [(ngModel)]="courses.course" name="{{ course.nombre }}"></ion-input>
     </ion-item>
 
     <ion-label>Platos principales</ion-label>
     <ion-item *ngFor="let course of mainCourses | async">
       <ion-label>{{ course.nombre }}</ion-label>
-      <ion-input type="number" [(ngModel)]="dishes.course" name="{{ course.nombre }}"></ion-input>
+      <ion-input type="number" [(ngModel)]="courses.course" name="{{ course.nombre }}"></ion-input>
     </ion-item>
 
     <ion-label>Postres</ion-label>
     <ion-item *ngFor="let course of desserts | async">
       <ion-label>{{ course.nombre }}</ion-label>
-      <ion-input type="number" [(ngModel)]="dishes.course" name="{{ course.nombre }}"></ion-input>
+      <ion-input type="number" [(ngModel)]="courses.course" name="{{ course.nombre }}"></ion-input>
     </ion-item>
 
   </ion-list>
 
-  <button ion-button full (click)="sendDishes()">Seleccionar platos</button>
+  <button ion-button full (click)="sendCourses()">Seleccionar platos</button>
 
 </ion-content>
