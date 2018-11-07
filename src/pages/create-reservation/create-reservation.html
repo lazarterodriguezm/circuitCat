@@ -38,6 +38,13 @@
         <ion-textarea [(ngModel)]="reservation.preferencias" name="preferences"></ion-textarea>
       </ion-item>
 
+      <ion-item>
+        <ion-label>Alergias</ion-label>
+        <ion-textarea [(ngModel)]="reservation.alergias" name="allergies"></ion-textarea>
+      </ion-item>
+
+      <button ion-button type="button" full (click)="pushSelectDishesPage()">Seleccionar platos</button>
+
       <button ion-button type="submit" block>Crear reserva</button>
 
     </form>

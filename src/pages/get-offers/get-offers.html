@@ -6,16 +6,35 @@
 
 <ion-content padding>
 
-    <form (ngSubmit)="getOffer()">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Moto_Gp_logo.svg/250px-Moto_Gp_logo.svg.png" style="width: 100%;">
+
+    <form (ngSubmit)="createOfferForm()">
 
       <ion-item>
-        <ion-label>Title</ion-label>
-        <ion-input type="text" [(ngModel)]="offer.title" name="title"></ion-input>
+        <ion-icon name="ribbon" color="#FFD700"></ion-icon>
+        <ion-label>Primero</ion-label>
+        <ion-select  [(ngModel)]="offer.primero" name="first">
+          <ion-option value="Marquez">Marquez</ion-option>
+          <ion-option value="Lorenzo">Lorenzo</ion-option>
+        </ion-select>
       </ion-item>
 
       <ion-item>
-        <ion-label>Description</ion-label>
-        <ion-textarea [(ngModel)]="offer.description" name="description"></ion-textarea>
+        <ion-icon name="ribbon" color="#bebebe"></ion-icon>
+        <ion-label>Segundo</ion-label>
+        <ion-select  [(ngModel)]="offer.segundo" name="second">
+          <ion-option value="Marquez">Marquez</ion-option>
+          <ion-option value="Lorenzo">Lorenzo</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="ribbon" color="#CD7F32"></ion-icon>
+        <ion-label>Tercero</ion-label>
+        <ion-select  [(ngModel)]="offer.tercero" name="third">
+          <ion-option value="Marquez">Marquez</ion-option>
+          <ion-option value="Lorenzo">Lorenzo</ion-option>
+        </ion-select>
       </ion-item>
 
       <button ion-button type="submit" block>Enviar oferta</button>

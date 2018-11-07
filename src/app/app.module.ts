@@ -18,6 +18,7 @@ import { ViewOffersPage } from '../pages/view-offers/view-offers';
 import { GetOffersPage } from '../pages/get-offers/get-offers';
 import { ViewReservationPage } from '../pages/view-reservation/view-reservation';
 import { ViewOfferPage } from '../pages/view-offer/view-offer';
+import { SelectDishesPage } from '../pages/select-dishes/select-dishes';
 
 // Providers
 import { StorageProvider } from '../providers/storage/storage';
@@ -60,7 +61,8 @@ var firebase = {
     ViewOffersPage,
     GetOffersPage,
     ViewReservationPage,
-    ViewOfferPage
+    ViewOfferPage,
+    SelectDishesPage
   ],
   imports: [
     BrowserModule,
@@ -86,7 +88,8 @@ var firebase = {
     ViewOffersPage,
     GetOffersPage,
     ViewOfferPage,
-    ViewReservationPage
+    ViewReservationPage,
+    SelectDishesPage
   ],
   providers: [
     StorageProvider,
