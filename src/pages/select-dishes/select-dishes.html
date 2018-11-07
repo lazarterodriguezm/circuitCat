@@ -8,51 +8,24 @@
 
   <ion-list inset>
 
-    <label style="font-size:18px"><b>Escribe el numero de comensales que quieren el plato al lado del mismo</b></label>
+    <ion-label>Escribe el numero de comensales que quieren el plato al lado del mismo</ion-label>
 
-    <ion-item>
-      <ion-label>Ensalada</ion-label>
-      <ion-input type="number" [(ngModel)]="dishes.ensalada" name="ensalada"></ion-input>
+    <ion-label>Entrantes</ion-label>
+    <ion-item *ngFor="let course of entrees | async">
+      <ion-label>{{ course.nombre }}</ion-label>
+      <ion-input type="number" [(ngModel)]="dishes.course" name="{{ course.nombre }}"></ion-input>
     </ion-item>
 
-    <ion-item>
-      <ion-label>Ensalada de pasta</ion-label>
-      <ion-input type="number" [(ngModel)]="dishes.ensaladadepasta" name="ensaladadepasta"></ion-input>
+    <ion-label>Platos principales</ion-label>
+    <ion-item *ngFor="let course of mainCourses | async">
+      <ion-label>{{ course.nombre }}</ion-label>
+      <ion-input type="number" [(ngModel)]="dishes.course" name="{{ course.nombre }}"></ion-input>
     </ion-item>
 
-    <ion-item>
-      <ion-label >Gazpacho</ion-label>
-      <ion-input type="number" [(ngModel)]="dishes.gazpacho" name="gazpacho"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>Butifarra</ion-label>
-      <ion-input type="number" [(ngModel)]="dishes.butifarra" name="butifarra"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>Macarrones</ion-label>
-      <ion-input type="number" [(ngModel)]="dishes.macarrones" name="macarrones"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>Filete</ion-label>
-      <ion-input type="number" [(ngModel)]="dishes.filete" name="filete"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>Helado</ion-label>
-      <ion-input type="number" [(ngModel)]="dishes.helado" name="helado"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>Fruta</ion-label>
-      <ion-input type="number" [(ngModel)]="dishes.fruta" name="fruta"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>Yogurt</ion-label>
-      <ion-input type="number" [(ngModel)]="dishes.yogurt" name="yogurt"></ion-input>
+    <ion-label>Postres</ion-label>
+    <ion-item *ngFor="let course of desserts | async">
+      <ion-label>{{ course.nombre }}</ion-label>
+      <ion-input type="number" [(ngModel)]="dishes.course" name="{{ course.nombre }}"></ion-input>
     </ion-item>
 
   </ion-list>
