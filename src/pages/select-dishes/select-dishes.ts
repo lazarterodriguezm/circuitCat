@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 @IonicPage()
 @Component({
   selector: 'page-select-dishes',
@@ -23,5 +26,8 @@ export class SelectDishesPage {
 
     this.navCtrl.pop();
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 }
