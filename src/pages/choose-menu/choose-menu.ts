@@ -14,12 +14,12 @@ import { Observable } from 'rxjs/Observable';
 >>>>>>> Marc
 @IonicPage()
 @Component({
-  selector: 'page-select-dishes',
-  templateUrl: 'select-dishes.html',
+  selector: 'page-choose-menu',
+  templateUrl: 'choose-menu.html',
 })
-export class SelectDishesPage {
+export class ChooseMenuPage {
 
-  dishes = {}
+  courses = {}
 
   entrees: Observable<any[]>;
   mainCourses: Observable<any[]>;
@@ -32,11 +32,11 @@ export class SelectDishesPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SelectDishesPage');
+    console.log('ionViewDidLoad ChooseMenuPage');
   }
 
-  sendDishes() {
-    console.log(this.dishes);
+  sendCourses() {
+    console.log(this.courses);
 
     this.navCtrl.pop();
   }

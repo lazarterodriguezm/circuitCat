@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-import { SelectDishesPage } from '../select-dishes/select-dishes';
+import { ChooseMenuPage } from '../choose-menu/choose-menu';
 
 import { StorageProvider } from './../../providers/storage/storage';
 
@@ -29,8 +29,8 @@ export class CreateReservationPage {
     console.log('ionViewDidLoad CreateReservationPage');
   }
 
-  pushSelectDishesPage() {
-    this.navCtrl.push(SelectDishesPage);
+  pushChooseMenuPage() {
+    this.navCtrl.push(ChooseMenuPage);
   }
 
   createReservation() {
