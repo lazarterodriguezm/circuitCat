@@ -24,7 +24,7 @@ export class GetOffersPage {
   }
 
   createOfferForm() {
-    this.storageProvider.storeInfoToDatabase('ofertas/formularios/' + this.device.uuid, this.offer).then(() => {
+    this.storageProvider.storeInfoToDatabase('ofertas/formularios/', this.device.uuid, this.offer).then(() => {
       let toast = this.toastCtrl.create({
         message: 'New File added!',
         duration: 3000

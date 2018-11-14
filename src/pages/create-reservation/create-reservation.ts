@@ -34,7 +34,16 @@ export class CreateReservationPage {
   }
 
   createReservation() {
-    this.storageProvider.storeInfoToDatabase('reservas/' + this.device.uuid, this.reservation).then(() => {
+    this.storageProvider.storeInfoToDatabase('reservasUsuarios/' + this.device.uuid, this.device.uuid + this.reservation.fecha, this.reservation).then(() => {
+      let toast = this.toastCtrl.create({
+        message: 'New File added!',
+        duration: 3000
+      });
+
+      toast.present();
+    });
+
+    this.storageProvider.storeInfoToDatabase('reservasAdministracion/' + this.reservation.fecha, this.device.uuid + this.reservation.fecha, this.reservation).then(() => {
       let toast = this.toastCtrl.create({
         message: 'New File added!',
         duration: 3000

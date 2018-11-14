@@ -77,7 +77,7 @@ var firebase = {
     AngularFireDatabaseModule, // imports firebase/database only needed for database features
     //AngularFireFunctionsModule, // imports firebase/functions only needed for functions features
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
-    AngularFireStorageModule, // imports firebase/storage only needed for storage features
+    AngularFireStorageModule // imports firebase/storage only needed for storage features
     //AngularFireMessagingModule // imports firebase/messaging only needed for messaging features
   ],
   bootstrap: [IonicApp],
