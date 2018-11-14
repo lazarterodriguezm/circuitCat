@@ -43,6 +43,11 @@
         <ion-textarea [(ngModel)]="reservation.alergias" name="allergies"></ion-textarea>
       </ion-item>
 
+      <ion-item>
+        <ion-label>Fecha</ion-label>
+        <ion-datetime displayFormat="HH:00 DD/MM/YY" pickerFormat="HH:00 DD/MMM/YYYY" [(ngModel)]="reservation.fecha" [min]="minDate.toISOString()" [max]="maxDate.toISOString()" name="date"></ion-datetime>
+      </ion-item>
+
       <button ion-button type="button" full (click)="pushChooseMenuPage()">Seleccionar platos</button>
 
       <button ion-button type="submit" block>Crear reserva</button>
