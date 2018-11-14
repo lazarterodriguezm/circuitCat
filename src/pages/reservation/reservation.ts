@@ -20,7 +20,7 @@ export class ReservationPage {
   reservations: Observable<any[]>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private storageProvider: StorageProvider, private device: Device) {
-    this.reservations = this.storageProvider.getListFromDatabase('reservas/' + this.device.uuid);
+    this.reservations = this.storageProvider.getListFromDatabase('reservasUsuarios/' + this.device.uuid);
   }
 
   ionViewDidLoad() {
@@ -36,6 +36,7 @@ export class ReservationPage {
   }
 
   deleteReservation(reservation: any) {
-    this.storageProvider.deleteInfoFromDatabase('reservas/' + this.device.uuid, reservation);
+    this.storageProvider.deleteInfoFromDatabase('reservasUsuarios/' + reservation.uuid, reservation);
+    this.storageProvider.deleteInfoFromDatabase('reservasAdministracion/' + reservation.fecha, reservation);
   }
 }

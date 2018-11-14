@@ -66,13 +66,18 @@ var firebase = {
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp, {
+      monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+      monthShortNames: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+      dayNames: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'],
+      dayShortNames: ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'],
+    }),
     AngularFireModule.initializeApp(firebase), // imports firebase/app needed for everything
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireDatabaseModule, // imports firebase/database only needed for database features
     //AngularFireFunctionsModule, // imports firebase/functions only needed for functions features
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
-    AngularFireStorageModule, // imports firebase/storage only needed for storage features
+    AngularFireStorageModule // imports firebase/storage only needed for storage features
     //AngularFireMessagingModule // imports firebase/messaging only needed for messaging features
   ],
   bootstrap: [IonicApp],

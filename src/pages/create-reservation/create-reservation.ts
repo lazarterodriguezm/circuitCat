@@ -16,9 +16,13 @@ import { Device } from '@ionic-native/device';
 })
 export class CreateReservationPage {
 
-  reservation = {}
+  reservation = {fecha: "", uuid: ""}
+
+  minDate: Date = new Date();
+  maxDate: Date = new Date();
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private storageProvider: StorageProvider, private toastCtrl: ToastController, private device: Device) {
+    this.maxDate.setDate(this.maxDate.getDate() + 90);
   }
 
   ionViewDidLoad() {
@@ -30,7 +34,18 @@ export class CreateReservationPage {
   }
 
   createReservation() {
-    this.storageProvider.storeInfoToDatabase('reservas/' + this.device.uuid, this.reservation).then(() => {
+    this.reservation.uuid = this.device.uuid;
+
+    this.storageProvider.storeInfoToDatabase('reservasUsuarios/' + this.device.uuid, this.device.uuid + this.reservation.fecha, this.reservation).then(() => {
+      let toast = this.toastCtrl.create({
+        message: 'New File added!',
+        duration: 3000
+      });
+
+      toast.present();
+    });
+
+    this.storageProvider.storeInfoToDatabase('reservasAdministracion/' + this.reservation.fecha, this.device.uuid + this.reservation.fecha, this.reservation).then(() => {
       let toast = this.toastCtrl.create({
         message: 'New File added!',
         duration: 3000

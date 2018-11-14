@@ -10,8 +10,8 @@ export class StorageProvider {
     console.log('Hello StorageProvider Provider');
   }
 
-  storeInfoToDatabase(path, metainfo) {
-    return this.angularFireDatabase.list(path).push(metainfo);
+  storeInfoToDatabase(path, key, metainfo) {
+    return this.angularFireDatabase.list(path).set(key, metainfo);
   }
 
   getListFromDatabase(path) {
