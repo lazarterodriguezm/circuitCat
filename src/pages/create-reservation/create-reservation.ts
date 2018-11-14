@@ -16,7 +16,7 @@ import { Device } from '@ionic-native/device';
 })
 export class CreateReservationPage {
 
-  reservation = {fecha:""}
+  reservation = {fecha: "", uuid: ""}
 
   minDate: Date = new Date();
   maxDate: Date = new Date();
@@ -34,6 +34,8 @@ export class CreateReservationPage {
   }
 
   createReservation() {
+    this.reservation.uuid = this.device.uuid;
+
     this.storageProvider.storeInfoToDatabase('reservasUsuarios/' + this.device.uuid, this.device.uuid + this.reservation.fecha, this.reservation).then(() => {
       let toast = this.toastCtrl.create({
         message: 'New File added!',

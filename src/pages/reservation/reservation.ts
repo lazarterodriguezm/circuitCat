@@ -36,7 +36,7 @@ export class ReservationPage {
   }
 
   deleteReservation(reservation: any) {
-    this.storageProvider.deleteInfoFromDatabase('reservasUsuarios/' + this.device.uuid, reservation);
+    this.storageProvider.deleteInfoFromDatabase('reservasUsuarios/' + reservation.uuid, reservation);
     this.storageProvider.deleteInfoFromDatabase('reservasAdministracion/' + reservation.fecha, reservation);
   }
 }
