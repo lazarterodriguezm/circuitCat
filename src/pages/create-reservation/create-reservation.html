@@ -45,7 +45,12 @@
 
       <ion-item>
         <ion-label>Fecha</ion-label>
-        <ion-datetime displayFormat="HH:00 DD/MM/YY" pickerFormat="HH:00 DD/MMM/YYYY" [(ngModel)]="reservation.fecha" [min]="minDate.toISOString()" [max]="maxDate.toISOString()" name="date"></ion-datetime>
+        <ion-label name="date" (click)="showDatePicker()">{{ reservation.fecha }}</ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Hora</ion-label>
+        <ion-datetime displayFormat="HH:00" name="hour"></ion-datetime>
       </ion-item>
 
       <button ion-button type="button" full (click)="pushChooseMenuPage()">Seleccionar platos</button>

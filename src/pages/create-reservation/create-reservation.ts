@@ -8,6 +8,7 @@ import { StorageProvider } from './../../providers/storage/storage';
 import { ToastController } from 'ionic-angular/components/toast/toast-controller';
 
 import { Device } from '@ionic-native/device';
+import { DatePicker } from '@ionic-native/date-picker';
 
 @IonicPage()
 @Component({
@@ -17,16 +18,25 @@ import { Device } from '@ionic-native/device';
 export class CreateReservationPage {
 
   reservation = {fecha: "", uuid: ""}
+  options = { year: '2-digit', month: '2-digit', day: '2-digit' };
 
-  minDate: Date = new Date();
-  maxDate: Date = new Date();
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, private storageProvider: StorageProvider, private toastCtrl: ToastController, private device: Device) {
-    this.maxDate.setDate(this.maxDate.getDate() + 90);
+  constructor(public navCtrl: NavController, public navParams: NavParams, private storageProvider: StorageProvider, private toastCtrl: ToastController, private device: Device, private datePicker: DatePicker) {
+    this.reservation.fecha = (new Date).toLocaleDateString('es-ES', this.options);
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CreateReservationPage');
+  }
+
+  showDatePicker() {
+    this.datePicker.show({
+      date: new Date(),
+      mode: 'date',
+      androidTheme: this.datePicker.ANDROID_THEMES.THEME_HOLO_DARK
+    }).then(
+      date => this.reservation.fecha = date.toLocaleDateString('es-ES', this.options),
+      err => console.log('Error occurred while getting date: ', err)
+    );
   }
 
   pushChooseMenuPage() {
