@@ -50,7 +50,7 @@
 
       <ion-item>
         <ion-label>Hora</ion-label>
-        <ion-datetime displayFormat="HH:00" name="hour"></ion-datetime>
+        <ion-datetime displayFormat="HH:00" [(ngModel)]="reservation.hora" name="hour"></ion-datetime>
       </ion-item>
 
       <button ion-button type="button" full (click)="pushChooseMenuPage()">Seleccionar platos</button>

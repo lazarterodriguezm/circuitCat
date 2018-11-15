@@ -17,7 +17,7 @@ import { DatePicker } from '@ionic-native/date-picker';
 })
 export class CreateReservationPage {
 
-  reservation = {fecha: "", uuid: ""}
+  reservation = {hora: "", fecha: "", uuid: ""}
   options = { year: '2-digit', month: '2-digit', day: '2-digit' };
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private storageProvider: StorageProvider, private toastCtrl: ToastController, private device: Device, private datePicker: DatePicker) {
@@ -46,7 +46,7 @@ export class CreateReservationPage {
   createReservation() {
     this.reservation.uuid = this.device.uuid;
 
-    this.storageProvider.storeInfoToDatabase('reservasUsuarios/' + this.device.uuid, this.device.uuid + this.reservation.fecha, this.reservation).then(() => {
+    this.storageProvider.storeInfoToDatabase('reservasUsuarios/' + this.device.uuid, this.device.uuid + this.reservation.hora + this.reservation.fecha, this.reservation).then(() => {
       let toast = this.toastCtrl.create({
         message: 'New File added!',
         duration: 3000
