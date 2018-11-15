@@ -23,7 +23,11 @@ export class HomePage {
     console.log('ionViewDidLoad HomePage');
   }
 
+<<<<<<< HEAD
   getSlideStyle(image) {
+=======
+  getSlideStyleHome(image) {
+>>>>>>> ac67f0ec5db41fe0d98fe0a24d130ec36ae9f5d6
     return this.domSanitizer.bypassSecurityTrustStyle(`url(${image})`);
   }
 }
