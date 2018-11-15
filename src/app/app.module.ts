@@ -38,6 +38,7 @@ import { AngularFireStorageModule } from 'angularfire2/storage';
 //import { AngularFireMessagingModule } from 'angularfire2/messaging';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { Device } from '@ionic-native/device';
+import { DatePicker } from '@ionic-native/date-picker';
 
 var firebase = {
     apiKey: "AIzaSyAyiJZMWW7wC7FrmkkPtlU5b1PGwYOC4Lg",
@@ -103,7 +104,8 @@ var firebase = {
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Push,
     InAppBrowser,
-    Device
+    Device,
+    DatePicker
   ]
 })
 export class AppModule {}

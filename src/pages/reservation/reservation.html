@@ -8,17 +8,16 @@
 
   <ion-card *ngFor="let reservation of reservations | async">
     <ion-card-header>
-      {{ reservation.created | date:'medium' }}
+      {{ reservation.fecha }}
     </ion-card-header>
 
     <ion-card-content>
       <button ion-button block icon-left outline (click)="pushViewReservationPage(reservation)">
         <ion-icon name="eye"></ion-icon>
-        {{ reservation.fullPath }}
       </button>
 
       <button ion-button block outline icon-left color="danger" (click)="deleteReservation(reservation)">
-        <ion-icon name="trash"></ion-icon> Delete
+        <ion-icon name="trash"></ion-icon>
       </button>
     </ion-card-content>
   </ion-card>
