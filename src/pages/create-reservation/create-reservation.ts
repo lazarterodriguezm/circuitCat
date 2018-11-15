@@ -54,7 +54,9 @@ export class CreateReservationPage {
       popoverArrowDirection: "any",
       locale: "es_ES"
     }).then(
-      date => this.reservation.fecha = date.toLocaleDateString('es-ES', this.options),
+      date => {
+        this.reservation.fecha = (new Date(Math.round(date.getTime() / (1000 * 60 * 30)) * (1000 * 60 * 30))).toLocaleDateString('es-ES', this.options);
+      },
       err => console.log('Error occurred while getting date: ', err)
     );
   }
