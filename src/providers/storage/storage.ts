@@ -23,7 +23,7 @@ export class StorageProvider {
   }
 
   deleteInfoFromDatabase(path, metainfo) {
-    this.angularFireDatabase.list(path).remove(metainfo.key)
+    return this.angularFireDatabase.list(path).remove(metainfo.key);
   }
  
   uploadToStorage(path, information): AngularFireUploadTask {

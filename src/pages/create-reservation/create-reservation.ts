@@ -19,10 +19,10 @@ export class CreateReservationPage {
 
   options = { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit', year: '2-digit' };
 
-  reservation = {nombre: "", apellidos: "", telefono: "", fecha: "", hora: "", comensales: "", dietas: "", uuid: ""}
+  reservation = {nombre: "", apellidos: "", telefono: "", fecha: "", comensales: "", dietas: "", uuid: ""}
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private storageProvider: StorageProvider, private toastCtrl: ToastController, private device: Device, private datePicker: DatePicker) {
-    this.reservation.fecha = (new Date).toLocaleDateString('es-ES', this.options);
+    this.reservation.fecha = (new Date(Math.round((new Date).getTime() / (1000 * 60 * 30)) * (1000 * 60 * 30))).toLocaleDateString('es-ES', this.options).replace(/\//g, '-');
   }
 
   ionViewDidLoad() {
@@ -55,7 +55,7 @@ export class CreateReservationPage {
       locale: "es_ES"
     }).then(
       date => {
-        this.reservation.fecha = (new Date(Math.round(date.getTime() / (1000 * 60 * 30)) * (1000 * 60 * 30))).toLocaleDateString('es-ES', this.options);
+        this.reservation.fecha = (new Date(Math.round(date.getTime() / (1000 * 60 * 30)) * (1000 * 60 * 30))).toLocaleDateString('es-ES', this.options).replace(/\//g, '-');
       },
       err => console.log('Error occurred while getting date: ', err)
     );
@@ -67,23 +67,19 @@ export class CreateReservationPage {
 
   createReservation() {
     this.reservation.uuid = this.device.uuid;
+    this.reservation.fecha = this.reservation.fecha;
 
-    this.storageProvider.storeInfoToDatabase('reservasUsuarios/' + this.device.uuid, this.device.uuid + this.reservation.fecha, this.reservation).then(() => {
+    this.storageProvider.storeInfoToDatabase('reservasUsuarios/' + this.device.uuid, this.device.uuid + ' ' + this.reservation.fecha, this.reservation).then(() => {
       let toast = this.toastCtrl.create({
-        message: 'New File added!',
+        message: '¡Nueva reserva añadida!',
         duration: 3000
       });
 
       toast.present();
     });
 
-    this.storageProvider.storeInfoToDatabase('reservasAdministracion/' + this.reservation.fecha, this.device.uuid + this.reservation.fecha, this.reservation).then(() => {
-      let toast = this.toastCtrl.create({
-        message: 'New File added!',
-        duration: 3000
-      });
-
-      toast.present();
+    this.storageProvider.storeInfoToDatabase('reservasAdministracion/' + this.reservation.fecha, this.device.uuid + ' ' + this.reservation.fecha, this.reservation).then(() => {
+      console.log('Nueva reserva de administración añadida.');
     });
 
     this.navCtrl.pop();

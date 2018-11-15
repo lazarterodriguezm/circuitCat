@@ -8,7 +8,7 @@
 
   <ion-slides pager>
 
-    <ion-slide style="background-color: green" *ngFor="let cover of covers | async">
+    <ion-slide *ngFor="let cover of covers | async" style="background-color: #ffffff; height: 100%; background-position: center; background-repeat: no-repeat; background-size: cover;" [style.background-image]="getSlideStyle(cover.imagen)">
       <h2>{{ cover.texto }}</h2>
     </ion-slide>
 
