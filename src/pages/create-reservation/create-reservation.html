@@ -1,9 +1,3 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>CreateReservation</ion-title>
-  </ion-navbar>
-</ion-header>
-
 <ion-content padding>
 
     <form (ngSubmit)="createReservation()">
@@ -14,38 +8,28 @@
       </ion-item>
 
       <ion-item>
-        <ion-label>Apellido</ion-label>
-        <ion-input type="text" [(ngModel)]="reservation.apellido" name="surname"></ion-input>
+        <ion-label>Apellidos</ion-label>
+        <ion-input type="text" [(ngModel)]="reservation.apellidos" name="surname"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label>Teléfono</ion-label>
-        <ion-input type="tel" [(ngModel)]="reservation.telefono" name="phone"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Email</ion-label>
-        <ion-input type="email" [(ngModel)]="reservation.email" name="email"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Numero de comensales</ion-label>
-        <ion-input type="number" [(ngModel)]="reservation.comensales" name="diners"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Descripcion</ion-label>
-        <ion-textarea [(ngModel)]="reservation.preferencias" name="preferences"></ion-textarea>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Alergias</ion-label>
-        <ion-textarea [(ngModel)]="reservation.alergias" name="allergies"></ion-textarea>
+        <ion-label>Teléfono de contacto</ion-label>
+        <ion-input type="text" [(ngModel)]="reservation.telefono" name="phone"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label>Fecha</ion-label>
         <ion-label name="date" (click)="showDatePicker()">{{ reservation.fecha }}</ion-label>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Numero de comensales</ion-label>
+        <ion-input type="text" [(ngModel)]="reservation.comensales" name="diners"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Dietas especiales</ion-label>
+        <ion-input type="text" [(ngModel)]="reservation.dietas" name="diets"></ion-input>
       </ion-item>
 
       <!-- <button ion-button type="button" full (click)="pushChooseMenuPage()">Seleccionar platos</button> -->

@@ -19,7 +19,7 @@ export class CreateReservationPage {
 
   options = { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit', year: '2-digit' };
 
-  reservation = {fecha: "", uuid: ""}
+  reservation = {nombre: "", apellidos: "", telefono: "", fecha: "", hora: "", comensales: "", dietas: "", uuid: ""}
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private storageProvider: StorageProvider, private toastCtrl: ToastController, private device: Device, private datePicker: DatePicker) {
     this.reservation.fecha = (new Date).toLocaleDateString('es-ES', this.options);
