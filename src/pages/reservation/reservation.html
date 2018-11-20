@@ -9,10 +9,6 @@
   <ion-card *ngFor="let reservation of reservations | async">
     <ion-card-header>
       {{ reservation.fecha }}
-<<<<<<< HEAD
-=======
-      <!--{{ reservation.created | date:'medium' }}-->
->>>>>>> ac67f0ec5db41fe0d98fe0a24d130ec36ae9f5d6
     </ion-card-header>
 
     <ion-card-content>
@@ -25,7 +21,7 @@
       </button>
     </ion-card-content>
   </ion-card>
-
+ 
   <ion-fab right bottom>
     <button ion-fab color="primary" (click)="pushCreateReservationPage()">
       <ion-icon name="create"></ion-icon>
