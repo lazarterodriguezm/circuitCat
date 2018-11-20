@@ -1,3 +1,12 @@
 {
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\pages",
+    "\\src\\pages\\create-reservation",
+    "\\src\\pages\\view-reservation",
+    "\\src\\providers\\storage"
+  ],
+  "SelectedNode": "\\src\\pages\\create-reservation\\create-reservation.ts",
   "PreviewInSolutionExplorer": false
 }
