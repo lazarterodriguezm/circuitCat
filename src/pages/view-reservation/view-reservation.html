@@ -7,4 +7,10 @@
   <p>{{ reservation.comensales }}</p>
   <p>{{ reservation.dietas }}</p>
 
+  <img src="https://chart.googleapis.com/chart?cht=qr&chs=512x512&chl={{ reservation.uuid }}&choe=UTF-8&chld=L|4">
+
+  <button ion-button block (click)="deleteReservation()">Eliminar reserva</button>
+
+  <button ion-button block (click)="duplicateReservation()">Duplicar reserva</button>
+
 </ion-content>

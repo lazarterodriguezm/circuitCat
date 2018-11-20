@@ -29,7 +29,8 @@ export class ReservationPage {
   }
 
   pushCreateReservationPage() {
-    this.navCtrl.push(CreateReservationPage);
+    let reservation = {nombre: "", apellidos: "", telefono: "", fecha: "", comensales: "", dietas: "", uuid: ""};
+    this.navCtrl.push(CreateReservationPage, reservation);
   }
 
   pushViewReservationPage(reservation: any) {
@@ -49,5 +50,9 @@ export class ReservationPage {
     this.storageProvider.deleteInfoFromDatabase('reservasAdministracion/' + reservation.fecha, reservation).then(() => {
       console.log('Reserva de administración borrada.');
     });
+  }
+
+  duplicateReservation(reservation: any) {
+    this.navCtrl.push(CreateReservationPage, reservation);
   }
 }
