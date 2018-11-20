@@ -1,11 +1,11 @@
 <ion-content padding>
 
-  <p>{{ reservation.nombre }}</p>
-  <p>{{ reservation.apellidos }}</p>
-  <p>{{ reservation.telefono }}</p>
-  <p>{{ reservation.fecha }}</p>
-  <p>{{ reservation.comensales }}</p>
-  <p>{{ reservation.dietas }}</p>
+  <pre style="font-size: 17px;"><b>Nombre</b>           {{ reservation.nombre }}</pre>
+  <pre style="font-size: 17px;"><b>Apellidos</b>           {{ reservation.apellidos }}</pre>
+  <pre style="font-size: 17px;"><b>Teléfono de contacto</b>           {{ reservation.telefono }}</pre>
+  <pre style="font-size: 17px;"><b>Fecha</b>           {{ reservation.fecha }}</pre>
+  <pre style="font-size: 17px;"><b>Numero de comensales</b>           {{ reservation.comensales }}</pre>
+  <pre style="font-size: 17px;"><b>Dietas especiales</b>           {{ reservation.dietas }}</pre>
 
   <img src="https://chart.googleapis.com/chart?cht=qr&chs=512x512&chl={{ reservation.uuid }}&choe=UTF-8&chld=L|4">
 
