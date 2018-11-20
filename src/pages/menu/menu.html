@@ -8,24 +8,27 @@
 
   <ion-slides pager style="height: 33%;">
 
-    <ion-slide *ngFor="let course of entrees | async" style="background-color: #ffffff; height: 100%; background-position: center; background-repeat: no-repeat; background-size: cover;" [style.background-image]="getSlideStyle(course.imagen)">
-      <h2>{{ course.nombre }}</h2>
+    <ion-slide *ngFor="let course of entrees | async" style="background-color: #ffffff; height: 100%; background-position: center; background-repeat: no-repeat; background-size: cover; position: relative; text-align: center;" [style.background-image]="getSlideStyle(course.imagen)">
+      <div style="position: absolute; top: 36%; font-size: 2.0em; width: 100%; font-weight: bold; color: #fff;">{{ course.nombre }}</div>
+      <div style="font-size: 1.0em; position: absolute; top: 52%; width: 100%; color: #fff;">{{ course.descripcion }}</div>
     </ion-slide>
 
   </ion-slides>
 
   <ion-slides pager style="height: 34%;">
 
-    <ion-slide *ngFor="let course of mainCourses | async" style="background-color: #ffffff; height: 100%; background-position: center; background-repeat: no-repeat; background-size: cover;" [style.background-image]="getSlideStyle(course.imagen)">
-      <h2>{{ course.nombre }}</h2>
+    <ion-slide *ngFor="let course of mainCourses | async" style="background-color: #ffffff; height: 100%; background-position: center; background-repeat: no-repeat; background-size: cover; position: relative; text-align: center;" [style.background-image]="getSlideStyle(course.imagen)">
+      <div style="position: absolute; top: 36%; font-size: 2.0em; width: 100%; font-weight: bold; color: #fff;">{{ course.nombre }}</div>
+      <div style="font-size: 1.0em; position: absolute; top: 52%; width: 100%; color: #fff;">{{ course.descripcion }}</div>
     </ion-slide>
 
   </ion-slides>
 
   <ion-slides pager style="height: 33%;">
 
-    <ion-slide *ngFor="let course of desserts | async" style="background-color: #ffffff; height: 100%; background-position: center; background-repeat: no-repeat; background-size: cover;" [style.background-image]="getSlideStyle(course.imagen)">
-      <h2>{{ course.nombre }}</h2>
+    <ion-slide *ngFor="let course of desserts | async" style="background-color: #ffffff; height: 100%; background-position: center; background-repeat: no-repeat; background-size: cover; position: relative; text-align: center;" [style.background-image]="getSlideStyle(course.imagen)">
+      <div style="position: absolute; top: 36%; font-size: 2.0em; width: 100%; font-weight: bold; color: #fff;">{{ course.nombre }}</div>
+      <div style="font-size: 1.0em; position: absolute; top: 52%; width: 100%; color: #fff;">{{ course.descripcion }}</div>
     </ion-slide>
 
   </ion-slides>

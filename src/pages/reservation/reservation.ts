@@ -30,7 +30,7 @@ export class ReservationPage {
 
   pushCreateReservationPage() {
     let reservation = {nombre: "", apellidos: "", telefono: "", fecha: "", comensales: "", dietas: "", uuid: ""};
-    this.navCtrl.push(CreateReservationPage, reservation);
+    this.navCtrl.push(CreateReservationPage, {reservation : reservation});
   }
 
   pushViewReservationPage(reservation: any) {
@@ -53,6 +53,6 @@ export class ReservationPage {
   }
 
   duplicateReservation(reservation: any) {
-    this.navCtrl.push(CreateReservationPage, reservation);
+    this.navCtrl.push(CreateReservationPage, {reservation : reservation});
   }
 }

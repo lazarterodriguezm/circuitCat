@@ -37,9 +37,11 @@ export class ViewReservationPage {
     this.storageProvider.deleteInfoFromDatabase('reservasAdministracion/' + this.reservation.fecha, this.reservation).then(() => {
       console.log('Reserva de administración borrada.');
     });
+
+    this.navCtrl.pop();
   }
 
   duplicateReservation() {
-    this.navCtrl.push(CreateReservationPage, this.reservation);
+    this.navCtrl.push(CreateReservationPage, {reservation : this.reservation});
   }
 }
