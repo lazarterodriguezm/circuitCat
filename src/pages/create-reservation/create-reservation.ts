@@ -56,7 +56,7 @@ export class CreateReservationPage {
       locale: "es_ES"
     }).then(
       date => {
-        this.reservation.fecha = (new Date(Math.round(date.getTime() / (1000 * 60 * 30)) * (1000 * 60 * 30))).toLocaleDateString('es-ES', this.options).replace(/\//g, '-');
+        this.reservation.fecha = (new Date(Math.round(date.getTime() / (1000 * 60 * 60)) * (1000 * 60 * 60))).toLocaleDateString('es-ES', this.options).replace(/\//g, '-');
       },
       err => console.log('Error occurred while getting date: ', err)
     );

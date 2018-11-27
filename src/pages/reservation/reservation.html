@@ -1,13 +1,13 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Reservas</ion-title>
+    <ion-title><img src="assets/imgs/CircuitCatLogo.jpg" style="height: 28px;"></ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
 
   <ion-card style="height: 95%">
-    <ion-card-header style="color: #e61414;">Reservas</ion-card-header>
+    <ion-card-header><h1 style="color: #e61414;">Mis reservas</h1></ion-card-header>
 
     <ion-list *ngFor="let reservation of reservations | async">
       <button ion-item (click)="pushViewReservationPage(reservation)">
@@ -15,26 +15,26 @@
         <h2>{{ reservation.nombre }} {{ reservation.apellidos }}</h2>
         <p>{{ reservation.fecha }}</p>
       </button>
-        <ion-row>
-          <ion-col>
-            <button ion-button icon-start clear small (click)="pushViewReservationPage(reservation)">
-              <ion-icon name="eye"></ion-icon>
-              <div></div>
-            </button>
-          </ion-col>
-          <ion-col>
-            <button ion-button icon-start clear small (click)="duplicateReservation(reservation)">
-              <ion-icon name="copy"></ion-icon>
-              <div></div>
-            </button>
-          </ion-col>
-          <ion-col>
-            <button ion-button icon-start clear small (click)="deleteReservation(reservation)">
-              <ion-icon name="trash"></ion-icon>
-              <div></div>
-            </button>
-          </ion-col>
-        </ion-row>
+      <ion-row>
+        <ion-col>
+          <button ion-button icon-start clear small (click)="pushViewReservationPage(reservation)">
+            <ion-icon name="eye"></ion-icon>
+            <div></div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button icon-start clear small (click)="duplicateReservation(reservation)">
+            <ion-icon name="copy"></ion-icon>
+            <div></div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button icon-start clear small (click)="deleteReservation(reservation)">
+            <ion-icon name="trash"></ion-icon>
+            <div></div>
+          </button>
+        </ion-col>
+      </ion-row>
     </ion-list>
   </ion-card>
  
