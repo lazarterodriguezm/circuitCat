@@ -1,3 +1,9 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title><img src="assets/imgs/CircuitCatLogo.jpg" style="height: 28px;"></ion-title>
+  </ion-navbar>
+</ion-header>
+
 <ion-content padding>
 
     <form (ngSubmit)="createReservation()">
@@ -32,9 +38,7 @@
         <ion-input type="text" [(ngModel)]="reservation.dietas" name="diets"></ion-input>
       </ion-item>
 
-      <!-- <button ion-button type="button" full (click)="pushChooseMenuPage()">Seleccionar platos</button> -->
-
-      <button ion-button type="submit" block>Crear reserva</button>
+      <button ion-button full type="submit" color="light">Crear reserva</button>
 
     </form>
 
