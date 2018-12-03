@@ -10,7 +10,7 @@
 
     <ion-slide *ngFor="let cover of covers | async" style="background-color: #ffffff; height: 100%; background-position: center; background-repeat: no-repeat; background-size: cover; position: relative; text-align: center;" [style.background-image]="getSlideStyle(cover.imagen)">
       <div style="position: absolute; top: 36%; font-size: 2.0em; width: 100%; font-weight: bold; color: #fff;">{{ cover.texto }}</div>
-      <div style="font-size: 1.0em; position: absolute; top: 52%; width: 100%; color: #fff;">{{ cover.texto }}</div>
+      <div style="font-size: 1.0em; position: absolute; top: 52%; width: 100%; color: #fff;">{{ cover.descripcion }}</div>
     </ion-slide>
 
   </ion-slides>
